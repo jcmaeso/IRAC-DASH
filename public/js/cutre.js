@@ -6,10 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
 function init()
 {
   //var video,player,mpd_url = "./output_enc/stream.mpd";
-  var video,player,mpd_url = "./data/{{items[0]}}/stream.mpd";
+  var video,player,mpd_url = document.getElementById('player').getAttribute('src');
   video = document.querySelector("video");
   player = dashjs.MediaPlayer().create();
   player.initialize(video, mpd_url, true);
+
+  
  // player.setProtectionData(protData);
   player.on(dashjs.MediaPlayer.events["PLAYBACK_ENDED"], function() {
     clearInterval(eventPoller);});

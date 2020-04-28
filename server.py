@@ -44,7 +44,7 @@ class videoHandler(tornado.web.RequestHandler):
     def put(self):
         print("video put")
         id = self.get_argument('id','')
-        self.render("video.html", id = id)
+        self.render("./public/video.html", id = id)
 
     def get(self):
         print("video get")
@@ -54,26 +54,27 @@ class videoHandler(tornado.web.RequestHandler):
         items = mycursor.fetchall()[0]
 
         print(items[1])
-        self.render("video.html", items=items)
+        self.render("./public/video.html", items=items)
 
 
 class indexHandler(tornado.web.RequestHandler):
     def post(self):
         print("do post")
-        self.render("index.html")
+        self.render("./public/index.html")
 
     def get(self):
         print("do get")
         mycursor.execute("SELECT * FROM video")
         items = mycursor.fetchall()
-        self.render("index.html", items = items)
+        self.render("./public/index.html", items = items)
 
 if (__name__ == "__main__"):
     app = tornado.web.Application([
         ("/", indexHandler),
         ("/upload", uploadVideo),
         ("/video", videoHandler),
-        (r"/data/(.*)", tornado.web.StaticFileHandler, {'path': "./data/"})
+        (r"/data/(.*)", tornado.web.StaticFileHandler, {'path': "./data/"}),
+        ("/js/(.*)", tornado.web.StaticFileHandler, {'path': "./public/js/"}),
     ])
 
 

@@ -455,3 +455,16 @@ WARNING:tornado.access:404 GET /data/tfvjjzud/audio/und/mp4a/seg-129.m4s (188.26
 WARNING:tornado.access:404 GET /data/tfvjjzud/audio/und/mp4a/seg-129.m4s (188.26.215.57) 0.57ms
 WARNING:tornado.access:404 GET /data/tfvjjzud/audio/und/mp4a/seg-129.m4s (188.26.215.57) 0.70ms
 WARNING:tornado.access:404 GET /data/tfvjjzud/audio/und/mp4a/seg-129.m4s (188.26.215.57) 0.70ms
+Listening on port 8080
+Traceback (most recent call last):
+  File "server.py", line 83, in <module>
+    tornado.ioloop.IOLoop.instance().start()
+  File "/usr/local/lib/python3.6/dist-packages/tornado/platform/asyncio.py", line 149, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/lib/python3.6/asyncio/base_events.py", line 438, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.6/asyncio/base_events.py", line 1415, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/usr/lib/python3.6/selectors.py", line 445, in select
+    fd_event_list = self._epoll.poll(timeout, max_ev)
+KeyboardInterrupt
