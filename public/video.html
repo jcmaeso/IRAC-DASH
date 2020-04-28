@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8">
+    <title>IRAC DASH</title>
+    <style>
+    video {
+        width: 640px;
+        height: 360px;
+    }
+    </style>
+
+    <script src="http://cdn.dashjs.org/latest/dash.all.min.js"></script>
+    <script src="/js/cutre.js"> </script>
+  </head>
+
+    <h1><a href="/">IRAC DASH </a> </h1>
+	<body>
+    <H1>{{items[1]}}</H1> 
+    <p>{{items[2]}}</p>
+
+    <div class="code">
+      <video class="dashjs-player" autoplay controls preload="auto" muted></video>
+    </div>
+    <div class="code">
+      <p>Video Bitrate: <span id="bitrate"></span> kbps</p>
+      <p>Video Buffer: <span id="buffer"></span> seconds</p>
+      <p>Video Representation: <span id="representation"></span></p>
+    </div>
+
+    <form method = "post" action = "/upload" enctype="multipart/form-data" accept-charset="">
+      <label for="fname">Video name:</label><br>
+      <input type="text" id="fname" name="vname" value="John"><br>
+      <label for="lname">Author name:</label><br>
+      <input type="text" id="lname" name="aname" value="Doe"><br><br>
+      <input type = 'file' name = 'fileVideo' accept=".mp4"> 
+      <input type="submit" value="Submit">
+    </form>
+	</body> 
+
+</html>
+
