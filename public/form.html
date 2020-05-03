@@ -1,0 +1,23 @@
+
+{% include "header.html" %}
+
+
+
+  <form method = "post" action = "/upload" enctype="multipart/form-data" accept-charset="">
+    <div class="form-group">
+      <label for="email">Video name:</label>
+      <input  class="form-control" id="vname" placeholder="Enter video name" name="vname">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Author name:</label>
+      <input  class="form-control" id="aname" placeholder="Enter author name" name="aname">
+    </div>
+    <div class="form-group">
+        <label for="pwd">Video file:</label>
+        <input type = 'file' name = 'fileVideo' accept=".mp4">
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+
+{% include "foot.html" %}

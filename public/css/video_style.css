@@ -1,0 +1,13 @@
+.videoWrapper::after{
+    display: block;
+    clear: all;
+    content: "";
+}
+
+.videoPlayerCol{
+   float: left;
+   width: 46%;
+   padding: 1%;
+   margin: 1%;
+    
+}

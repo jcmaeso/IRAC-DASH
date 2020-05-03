@@ -1,0 +1,19 @@
+
+{% include "header.html" %}
+
+
+    <div class="row">
+    {% for item in items %}    
+
+      <div class="col-sm-4">
+        <div class="panel {% if item[4] == None %} panel-primary {% else %} panel-success {% end %}">
+          <div class="panel-heading">{{item[1]}} <a href="/delete?id={{item[0]}}"><span class="glyphicon glyphicon-remove pull-right"></span></a></div>
+          <div class="panel-body"><a href="/video?id={{item[0]}}"><img src="/data/{{item[0]}}/thumbnail.jpg" class="img-responsive" height="360" width="640" alt="ver video {{item[1]}}"></a></div>
+          <div class="panel-footer">autor: {{item[2]}}</div>
+        </div>
+      </div>
+    {% end %}
+    </div>
+
+
+{% include "foot.html" %}
